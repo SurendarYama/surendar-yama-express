@@ -1,7 +1,7 @@
 import express from "express";
 import { config } from "dotenv";
 config();
-const PORT = process.env.PORT || 1707;
+const PORT = process.env.PORT || 9909;
 
 const useApp = function (express, port) {
   const app = express();
