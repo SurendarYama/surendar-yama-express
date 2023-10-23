@@ -1,12 +1,9 @@
 import express from "express";
 import { config } from "dotenv";
 import { useApp } from "./boot.js";
-
 config();
 const PORT = process.env.PORT || 9909;
-
 const [app, dispatch] = useApp(express, PORT);
-
 dispatch({
   payload: {
     method: "get",
