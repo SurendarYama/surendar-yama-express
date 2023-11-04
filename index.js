@@ -1,19 +1,23 @@
-import express from "express";
+import { bootApp } from "./boot.js";
 import { config } from "dotenv";
-import { useApp } from "./boot.js";
 config();
-const PORT = process.env.PORT || 9909;
-const [app, dispatch] = useApp(express, PORT);
+const dispatch = bootApp();
+
+const middlewares = { before: [], after: [] };
+
 dispatch({
+  type: "👽",
   payload: {
-    method: "get",
-    middlewares: [
-      (req, res, next) => {
-        console.log("From middleware ...");
-        next();
-      },
-    ],
+    port: process.env.PORT,
+  },
+});
+
+dispatch({
+  type: "🧜🏽‍♂️",
+  payload: {
     path: "/",
+    method: "get",
+    middlewares,
     controller: function (req, res) {
       res.send("Hello World");
     },
