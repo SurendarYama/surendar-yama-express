@@ -12,9 +12,9 @@ dispatch({
   },
 });
 
-function make(modules) {
-  for (let i = 0; i < modules.length; i++) {
-    dispatch(modules[i]);
+function make(endpoints) {
+  for (let i = 0; i < endpoints.length; i++) {
+    dispatch(endpoints[i]);
   }
 }
 make(endpoints);
