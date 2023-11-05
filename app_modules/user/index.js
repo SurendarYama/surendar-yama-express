@@ -1,4 +1,4 @@
-const middlewares = { before: [], after: [] };
+import { middlewares } from "../helpers/index.js";
 
 export default [
   {
