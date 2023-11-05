@@ -1,9 +1,9 @@
 import { bootApp } from "./boot.js";
 import { config } from "dotenv";
-config();
-const dispatch = bootApp();
+import { endpoints } from "./app_modules/index.js";
 
-const middlewares = { before: [], after: [] };
+config();
+export const dispatch = bootApp();
 
 dispatch({
   type: "👽",
@@ -12,14 +12,9 @@ dispatch({
   },
 });
 
-dispatch({
-  type: "🧜🏽‍♂️",
-  payload: {
-    path: "/",
-    method: "get",
-    middlewares,
-    controller: function (req, res) {
-      res.send("Hello World");
-    },
-  },
-});
+function make(modules) {
+  for (let i = 0; i < modules.length; i++) {
+    dispatch(modules[i]);
+  }
+}
+make(endpoints);
