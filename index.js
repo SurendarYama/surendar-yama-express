@@ -1,5 +1,5 @@
+import { bootApp } from "surendar-yama-joy-server";
 import { config } from "dotenv";
-import { bootApp } from "./boot.js";
 import { endpoints } from "./app_modules/index.js";
 config();
 
