@@ -25,7 +25,7 @@ function set(configs) {
 
 function make(endpoints) {
   for (let i = 0; i < endpoints.length; i++) {
-    dispatch(endpoints[i]);
+    dispatch({ type: "🧜🏽‍♂️", payload: { ...endpoints[i] } });
   }
 }
 make(endpoints);
