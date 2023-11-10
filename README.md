@@ -1,0 +1,1 @@
+Starter template for surendar-yama-joy-server npm package.
